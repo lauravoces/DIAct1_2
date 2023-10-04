@@ -20,9 +20,9 @@ public class Principal {
         
     }
     public static void agregarAlumno(Alumno alumno) {
-        for(int i=0; i<=5;i++){
+      
             listaAlumno.add(alumno);
-        }
+        
         System.out.println("Nuevo alumno agregado: " + alumno.getNombre() + " " + alumno.getApellidos());
     }
 

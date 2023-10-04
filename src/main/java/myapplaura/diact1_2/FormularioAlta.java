@@ -206,32 +206,35 @@ public class FormularioAlta extends javax.swing.JFrame {
     private void fldEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fldEdadActionPerformed
 
     }//GEN-LAST:event_fldEdadActionPerformed
-private Alumno alumnoMasJoven = null;
+    private Alumno alumnoMasJoven = null;
+    int contador = 0;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nombre = fldName.getText();
         String apellido = fldApellido.getText();
         String email = fldEmail.getText();
         String tlf = fldTelefono.getText();
-        int edad= Integer.parseInt(fldEdad.getText());
-        int contador=0;
-        
+        int edad = Integer.parseInt(fldEdad.getText());
+    
+
+      if (contador < 5) {
             Alumno nuevoAlumno = new Alumno(nombre, apellido, email, edad, tlf);
-             Principal.agregarAlumno(nuevoAlumno);
-        
-       if (alumnoMasJoven == null || nuevoAlumno.getEdad() < alumnoMasJoven.getEdad()) {
-        alumnoMasJoven = nuevoAlumno;
-        alumnoJoven.setText(nombre);
-    }
+            Principal.agregarAlumno(nuevoAlumno);
+
+            if (alumnoMasJoven == null || nuevoAlumno.getEdad() < alumnoMasJoven.getEdad()) {
+                alumnoMasJoven = nuevoAlumno;
+                alumnoJoven.setText(nombre);
+            }
+      }  
         contador++;
         fldName.setText("");
         fldApellido.setText("");
         fldEmail.setText("");
         fldTelefono.setText("");
         fldEdad.setText("");
-        if (contador>5){
+        if (contador > 5) {
             errorM.setVisible(true);
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
