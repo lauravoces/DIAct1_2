@@ -216,7 +216,7 @@ public class FormularioAlta extends javax.swing.JFrame {
         int edad = Integer.parseInt(fldEdad.getText());
     
 
-      if (contador < 5) {
+      if (contador <= 5) {
             Alumno nuevoAlumno = new Alumno(nombre, apellido, email, edad, tlf);
             Principal.agregarAlumno(nuevoAlumno);
 
