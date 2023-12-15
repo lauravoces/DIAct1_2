@@ -73,12 +73,10 @@ public class Alumno {
     }
 
     public boolean alumnoMayorEdad(){
-        boolean mayor=false;
-        if(edad>=18){
-          return mayor=true;  
-        }else{
-          return mayor=false;
-        }
+       
+        if(edad>=18)
+          return true;  
+        
     }
     
 
